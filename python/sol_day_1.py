@@ -1,10 +1,8 @@
 from itertools import cycle
+from utils import load_input
 from halo import Halo
 
-
-def load_input(path: str = "../inputs/day1a") -> str:
-    with open(path, "r") as f:
-        return f.read().rstrip()
+DAY_INPUT = "../inputs/day1a"
 
 
 @Halo(text="Solving first part...", placement="right")
@@ -29,8 +27,8 @@ def solve_second_part(input_data: str) -> int:
 
 
 if __name__ == "__main__":
-    first_sol = solve_first_part(load_input())
+    first_sol = solve_first_part(load_input(DAY_INPUT))
     print(f"First part solution: {first_sol}")
 
-    second_sol = solve_second_part(load_input())
+    second_sol = solve_second_part(load_input(DAY_INPUT))
     print(f"Second part solution: {second_sol}")
