@@ -13,12 +13,12 @@ def solve_first_part(input_data: str) -> int:
 
 @Halo(text="Solving second part...", placement="right")
 def solve_second_part(input_data: str) -> int:
-    change_list = input_data.split("\n")
+    change_list = [int(i) for i in input_data.split("\n")]
 
     frequencies = [0]
     current_frequency = 0
     for change in cycle(change_list):
-        current_frequency = eval(f"{current_frequency}{change}")
+        current_frequency = current_frequency + change
 
         if current_frequency in frequencies:
             return current_frequency
